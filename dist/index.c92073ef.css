@@ -1,3 +1,10 @@
+footer, header {
+  color: #fff;
+  text-align: center;
+  background: #333;
+  padding: 10px 0;
+}
+
 body {
   color: #333;
   background-color: #f4f4f4;
@@ -5,13 +12,6 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
-}
-
-header {
-  color: #fff;
-  text-align: center;
-  background: #333;
-  padding: 10px 0;
 }
 
 nav ul {
@@ -34,11 +34,7 @@ main {
 }
 
 footer {
-  color: #fff;
-  text-align: center;
-  background: #333;
   width: 100%;
-  padding: 10px 0;
   position: fixed;
   bottom: 0;
 }
