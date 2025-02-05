@@ -2,12 +2,14 @@
   "name": "julia",
   "version": "1.0.0",
   "description": "",
-"scripts": {
-  "start": "parcel src/index.html",
-  "build": "npm run transpile && parcel build src/index.html",
-  "transpile": "babel src/js --out-dir dist/js"
-}
-,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "npm run transpile && npm run minify-css && npm run minify-js && npm run optimize-images && parcel build src/index.html",
+    "transpile": "babel src/js --out-dir dist/js",
+    "minify-css": "cssnano src/css/*.css --output dist/css/",
+    "minify-js": "terser src/js/*.js --compress --mangle --output dist/js/",
+    "optimize-images": "imagemin src/images/* --out-dir=dist/images && cwebp dist/images/*.jpg -o dist/images/*.webp"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -17,14 +19,14 @@
     "cssnano": "^7.0.6",
     "parcel": "^2.13.3",
     "postcss-cli": "^11.0.0",
-    "sharp-cli": "^5.1.0"
+    "imagemin": "^7.0.0",
+    "imagemin-webp": "^6.0.0",
+    "terser": "^5.7.2"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not op_mini all"
   ],
-  "dependencies": {
-    "sharp": "^0.33.5"
-  }
+  "dependencies": {}
 }
