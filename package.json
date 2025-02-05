@@ -2,10 +2,9 @@
   "name": "julia",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
+"scripts": {
   "start": "parcel src/index.html",
-  "build": "npm run optimize-images && npm run transpile && parcel build src/index.html",
-  "optimize-images": "sharp ./src/images/* --output ./dist/images --avif --webp",
+  "build": "npm run transpile && parcel build src/index.html",
   "transpile": "babel src/js --out-dir dist/js"
 }
 ,
@@ -24,5 +23,8 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
 }
